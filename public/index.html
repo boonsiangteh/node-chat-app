@@ -5,6 +5,19 @@
     <title>Node Chat app</title>
   </head>
   <body>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+      var socket = io();
+      <!-- use socketio built in event listener connect to listen to connections to server  -->
+      socket.on('connect', () => {
+        console.log('connected to server');
+      });
+
+      socket.on('disconnect', () => {
+        console.log('disconnected from server');
+      });
+    </script>
+
     <p>hello chat app</p>
   </body>
 </html>
